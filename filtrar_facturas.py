@@ -20,7 +20,7 @@ output_dir.mkdir(parents=True, exist_ok=True)
 # =========================
 # CONFIGURACIÓN
 # =========================
-SUCURSALES_OBJETIVO = {"38", "39"}  # 👈 CAMBIAR ACÁ
+SUCURSALES_OBJETIVO = {"38", "39"}
 
 # =========================
 # FUNCIÓN DE FILTRO
@@ -79,7 +79,7 @@ def procesar_archivo(input_path, output_path):
         print(f"❌ Error en {input_path.name}: {e}")
 
 # =========================
-# LOOP PRINCIPAL
+# LOOP PRINCIPAL e
 # =========================
 print(f"📂 Procesando archivos en: {input_dir}")
 
