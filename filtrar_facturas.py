@@ -34,7 +34,7 @@ def cumple_condicion(cabecera):
         return False
 
 # =========================
-# PROCESAMIENTO
+# PROCESAMIENTO 1
 # =========================
 def procesar_archivo(input_path, output_path):
     try:
@@ -79,7 +79,7 @@ def procesar_archivo(input_path, output_path):
         print(f"❌ Error en {input_path.name}: {e}")
 
 # =========================
-# LOOP PRINCIPAL e
+# LOOP PRINCIPAL
 # =========================
 print(f"📂 Procesando archivos en: {input_dir}")
 
