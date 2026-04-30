@@ -31,6 +31,9 @@ CUITS_OBJETIVO = {
     "30533285119"  # Asopro
 }
 
+# Fecha mínima de comprobantes a filtrar (formato AAAA-MM-DD). Si está vacío o es None, se aceptan todas.
+FECHA_DESDE = "2026-04-29"
+
 # =========================
 # FUNCIÓN DE FILTRO
 # =========================
@@ -38,9 +41,13 @@ def cumple_condicion(cabecera):
     try:
         campos = cabecera.split(";")
         sucursal = campos[2]   # tercer campo (índice 2)
+        fecha    = campos[7]   # octavo campo (índice 7)
         cuit     = campos[9]   # décimo campo (índice 9)
 
         if sucursal not in SUCURSALES_OBJETIVO:
+            return False
+
+        if FECHA_DESDE and fecha < FECHA_DESDE:
             return False
 
         if CUITS_OBJETIVO and cuit not in CUITS_OBJETIVO:
