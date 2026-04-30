@@ -22,19 +22,33 @@ output_dir.mkdir(parents=True, exist_ok=True)
 # =========================
 SUCURSALES_OBJETIVO = {"38", "39"}
 
+# CUITs de proveedores a filtrar. Si está vacío, se aceptan todos.
+CUITS_OBJETIVO = {
+    # "30538880627",
+    # "20123456789",
+}
+
 # =========================
 # FUNCIÓN DE FILTRO
 # =========================
 def cumple_condicion(cabecera):
     try:
         campos = cabecera.split(";")
-        sucursal = campos[2]  # tercer campo
-        return sucursal in SUCURSALES_OBJETIVO
+        sucursal = campos[2]   # tercer campo (índice 2)
+        cuit     = campos[9]   # décimo campo (índice 9)
+
+        if sucursal not in SUCURSALES_OBJETIVO:
+            return False
+
+        if CUITS_OBJETIVO and cuit not in CUITS_OBJETIVO:
+            return False
+
+        return True
     except:
         return False
 
 # =========================
-# PROCESAMIENTO 1
+# PROCESAMIENTO
 # =========================
 def procesar_archivo(input_path, output_path):
     try:
@@ -70,7 +84,6 @@ def procesar_archivo(input_path, output_path):
             with output_path.open("w", encoding="utf-8") as f:
                 for linea in bloques_filtrados:
                     f.write(linea + "\n")
-
             print(f"✅ Generado: {output_path}")
         else:
             print(f"ℹ️ Sin coincidencias: {input_path.name}")
@@ -88,3 +101,6 @@ for archivo in input_dir.glob("*.txt"):
     procesar_archivo(archivo, salida)
 
 print("🏁 Proceso terminado")
+
+
+# python C:\Users\rborlenghi\Documents\IFI010\filtrar_facturas.py "C:\Users\rborlenghi\Documents\IFI010\APROCESAR_20260428" "C:\Users\rborlenghi\Documents\IFI010\APROCESAR"
