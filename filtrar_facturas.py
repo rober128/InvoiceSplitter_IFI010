@@ -24,8 +24,11 @@ SUCURSALES_OBJETIVO = {"38", "39"}
 
 # CUITs de proveedores a filtrar. Si está vacío, se aceptan todos.
 CUITS_OBJETIVO = {
-    # "30538880627",
-    # "20123456789",
+    "30709515833", # ACE    
+    "30538880627", # DDS
+    "30517059095", # Monroe
+    "30516968431", # Suizo
+    "30533285119"  # Asopro
 }
 
 # =========================
