@@ -113,4 +113,4 @@ for archivo in input_dir.glob("*.txt"):
 print("🏁 Proceso terminado")
 
 
-# python C:\Users\rborlenghi\Documents\IFI010\filtrar_facturas.py "C:\Users\rborlenghi\Documents\IFI010\APROCESAR_20260428" "C:\Users\rborlenghi\Documents\IFI010\APROCESAR"
+# python C:\Users\rborlenghi\Documents\Proyecto1\filtrar_facturas.py "C:\Users\rborlenghi\Documents\IFI010\APROCESAR_20260508" "C:\Users\rborlenghi\Documents\IFI010\PROCESADOS_20260508"
