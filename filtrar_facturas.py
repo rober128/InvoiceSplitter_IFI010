@@ -32,7 +32,7 @@ CUITS_OBJETIVO = {
 }
 
 # Fecha mínima de comprobantes a filtrar (formato AAAA-MM-DD). Si está vacío o es None, se aceptan todas.
-FECHA_DESDE = "2026-05-04"
+FECHA_DESDE = "2026-05-09"
 
 # =========================
 # FUNCIÓN DE FILTRO
